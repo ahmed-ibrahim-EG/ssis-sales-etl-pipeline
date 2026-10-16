@@ -1,0 +1,9 @@
+OrderID,OrderDate,Product,Quantity,UnitPrice,Region
+101,6/1/2026,Laptop,2,750,North
+102,6/2/2026,Mouse,5,25.5,East
+103,6/3/2026,Keyboard,0,45,West
+104,6/4/2026,Monitor,1,200,South
+105,6/5/2026,Headphones,3,60,North
+106,6/6/2026,USB Cable,10,10,East
+107,6/7/2026,Desk Chair,1,150,West
+108,6/8/2026,Webcam,2,80,South
