@@ -7,12 +7,16 @@ An enterprise-grade ETL (Extract, Transform, Load) data pipeline developed using
 ### 1. Data Flow Architecture & Component Pipeline
 Below is the architectural layout and transformation logic configured across the pipeline:
 
-![Data Flow Architecture](screenshots/ETL%20.png)
+<p align="center">
+  <img src="./screenshots/ETL%20.png" alt="Data Flow Architecture" width="100%" />
+</p>
 
 ### 2. Successful Pipeline Execution
 Demonstration of full end-to-end execution with all buffers processed and validation passed across all components:
 
-![Pipeline Execution Success](screenshots/ETL%20SUC.png)
+<p align="center">
+  <img src="./screenshots/ETL%20SUC.png" alt="Pipeline Execution Success" width="100%" />
+</p>
 
 ## 🚀 Key Pipeline Stages
 
@@ -29,11 +33,11 @@ Demonstration of full end-to-end execution with all buffers processed and valida
 ### 3. Business Logic Computation
 - **Derived Column Transformation**:
   - **`TotalAmount`**: Computed line-item value using explicit casting:
-    ```
+    ```sql
     (DT_NUMERIC, 10, 2)(Conv_Quantity * Conv_UnitPrice)
     ```
   - **`OrderDescription`**: Dynamic formatted string concatenation:
-    ```
+    ```sql
     [ProductName] + " - " + [Region]
     ```
 
@@ -46,11 +50,11 @@ Demonstration of full end-to-end execution with all buffers processed and valida
 ### 5. Conditional Splitting & Rule Routing
 - **Conditional Split Transformation**:
   - **`VIP_Orders`**:
-    ```
+    ```sql
     [TotalAmount] >= 1000
     ```
   - **`Visa_Orders`**:
-    ```
+    ```sql
     [PaymentMethod] == "Visa" && [TotalAmount] < 1000
     ```
   - **`Other_Orders`**: Default fallback output for standard/other payment channels.
